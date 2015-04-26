@@ -22,7 +22,7 @@ public abstract class MyDevelopers {
 
     public abstract double getSalary();
 
-    public void Show(){
-        System.out.printf("%12s %10s %10s", getName(),getBasicSalary(),getSalary());
+    public int getExperience() {
+        return experience;
     }
 }
