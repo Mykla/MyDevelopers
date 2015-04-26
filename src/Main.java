@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Created by user on 26.04.2015.
  */
@@ -29,5 +31,53 @@ public class Main {
                 System.out.println();
             }
         }
+
+        // Разделение Developers на 3 списка JuniorDeveloper, SeniorDeveloper, LeadOfTeamDeveloper
+        ArrayList<MyDevelopers> junior = new ArrayList();
+        ArrayList<MyDevelopers> senior = new ArrayList();
+        ArrayList<MyDevelopers> lead = new ArrayList();
+
+        for (MyDevelopers d:list){
+            if (d instanceof JuniorDeveloper){
+                junior.add(d);
+            } else{
+                if (d instanceof SeniorDeveloper){
+                    senior.add(d);
+                } else {
+                    lead.add(d);
+                }
+            }
+        }
+
+        System.out.println();
+        System.out.println("Junior Developer:");
+        System.out.printf("%12s %15s %15s %10s", "Name", "Basic Salary", "Experience", "Salary");
+        System.out.println();
+
+        for (MyDevelopers d:junior){
+            System.out.printf("%12s %15s %15s %10s", d.getName(),d.getBasicSalary(),d.getExperience(),d.getSalary());
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println("Senior Developer:");
+        System.out.printf("%12s %15s %15s %10s", "Name", "Basic Salary", "Experience", "Salary");
+        System.out.println();
+
+        for (MyDevelopers d:senior){
+            System.out.printf("%12s %15s %15s %10s", d.getName(),d.getBasicSalary(),d.getExperience(),d.getSalary());
+            System.out.println();
+        }
+
+        System.out.println();
+        System.out.println("Team Lead:");
+        System.out.printf("%12s %15s %15s %10s", "Name", "Basic Salary", "Experience", "Salary");
+        System.out.println();
+
+        for (MyDevelopers d:lead){
+            System.out.printf("%12s %15s %15s %10s", d.getName(),d.getBasicSalary(),d.getExperience(),d.getSalary());
+            System.out.println();
+        }
     }
+
 }
